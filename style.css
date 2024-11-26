@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+  margin: 0;
+  /* overflow: hidden; */
+  font-family: 'Poppins', sans-serif;
+  /* Use a modern font */
+  color: white;
+  background: black;
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Content Section */
+#content {
+  height: 300vh;
+  /* Allows scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.title {
+  margin-top: 50vh;
+  /* Ensure it's initially centered */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+.title h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  /* Gold-like color */
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffd700;
+}
+
+.title p {
+  font-size: 1.5rem;
+  color: #87ceeb;
+  /* Sky blue */
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #1e90ff;
+}
+
+/* Glowing Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Parallax Effect */
+.title h1,
+.title p {
+  transform: translateZ(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating Effect for Text */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Prompt */
+.scroll-prompt {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0.7;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  animation: fade 2s infinite;
+}
+
+.scroll-prompt::after {
+  content: '↓';
+  display: block;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* Fade Animation for Scroll Prompt */
+@keyframes fade {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
